@@ -18,26 +18,20 @@
     --gray-100: #eef0f4;
     --gray-300: #c4cad6;
     --gray-500: #6b7585;
-    --gray-700: #3a4255;
     --success: #2a9d6e;
     --radius: 12px;
     --shadow: 0 4px 24px rgba(15,30,53,0.10);
   }
 
   html, body {
-    height: 100%;
+    min-height: 100%;
     font-family: 'DM Sans', sans-serif;
     background: var(--gray-50);
     color: var(--navy);
   }
 
-  .page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
+  .page { min-height: 100vh; display: flex; flex-direction: column; }
 
-  /* HEADER */
   .header {
     background: var(--navy);
     padding: 18px 24px;
@@ -47,43 +41,12 @@
     box-shadow: 0 2px 12px rgba(0,0,0,0.18);
   }
 
-  .header-logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-  }
+  .header-logo { display: flex; flex-direction: column; line-height: 1; }
+  .header-logo .brand { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--white); letter-spacing: -0.3px; }
+  .header-logo .sub { font-size: 10px; font-weight: 500; color: var(--accent); letter-spacing: 2.5px; text-transform: uppercase; margin-top: 2px; }
+  .header-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.15); margin: 0 4px; }
+  .header-title { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.65); }
 
-  .header-logo .brand {
-    font-family: "DM Serif Display", serif;
-    font-size: 22px;
-    color: var(--white);
-    letter-spacing: -0.3px;
-  }
-
-  .header-logo .sub {
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    margin-top: 2px;
-  }
-
-  .header-divider {
-    width: 1px;
-    height: 36px;
-    background: rgba(255,255,255,0.15);
-    margin: 0 4px;
-  }
-
-  .header-title {
-    font-size: 13px;
-    font-weight: 400;
-    color: rgba(255,255,255,0.65);
-    letter-spacing: 0.2px;
-  }
-
-  /* MAIN CONTENT */
   .main {
     flex: 1;
     display: flex;
@@ -91,17 +54,11 @@
     max-width: 680px;
     width: 100%;
     margin: 0 auto;
-    padding: 24px 16px 32px;
+    padding: 28px 16px 40px;
     gap: 20px;
   }
 
-  /* INTAKE FORM CARD */
-  .card {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-  }
+  .card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
 
   .card-header {
     background: var(--navy-light);
@@ -111,53 +68,20 @@
     gap: 10px;
   }
 
-  .card-header-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
-  }
+  .card-header-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .card-header h2 { font-family: 'DM Serif Display', serif; font-size: 17px; font-weight: 400; color: var(--white); }
 
-  .card-header h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--white);
-  }
+  .card-body { padding: 22px; }
 
-  .card-body {
-    padding: 20px;
-  }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 5px; }
+  .form-group.full { grid-column: 1 / -1; }
 
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
+  label { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-500); }
 
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .form-group.full {
-    grid-column: 1 / -1;
-  }
-
-  label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--gray-500);
-  }
-
-  input, textarea {
+  input, textarea, select {
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
-    font-weight: 400;
     color: var(--navy);
     background: var(--gray-50);
     border: 1.5px solid var(--gray-100);
@@ -168,27 +92,23 @@
     width: 100%;
   }
 
-  input:focus, textarea:focus {
+  input:focus, textarea:focus, select:focus {
     border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(232,131,42,0.10);
     background: var(--white);
   }
 
-  textarea {
-    resize: vertical;
-    min-height: 90px;
-  }
+  textarea { resize: vertical; min-height: 100px; }
 
   .btn-submit {
-    margin-top: 18px;
+    margin-top: 20px;
     width: 100%;
-    padding: 13px;
+    padding: 14px;
     background: var(--accent);
     color: var(--white);
     font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
-    letter-spacing: 0.3px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -199,244 +119,50 @@
   .btn-submit:active { transform: scale(0.99); }
   .btn-submit:disabled { background: var(--gray-300); cursor: not-allowed; }
 
-  /* STATUS MESSAGE */
-  .status-msg {
-    display: none;
-    padding: 11px 14px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    margin-top: 12px;
-  }
+  /* CONFIRMATION */
+  .confirmation { display: none; flex-direction: column; align-items: center; text-align: center; padding: 40px 24px; gap: 16px; }
+  .confirmation.active { display: flex; }
 
-  .status-msg.error {
-    display: block;
-    background: #fef2f2;
-    color: #b91c1c;
-    border: 1px solid #fecaca;
-  }
-
-  .status-msg.success {
-    display: block;
-    background: #f0fdf6;
-    color: var(--success);
-    border: 1px solid #bbf7d0;
-  }
-
-  /* CHAT SECTION */
-  .chat-section {
-    display: none;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .chat-section.active { display: flex; }
-
-  .resident-badge {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 14px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-  }
-
-  .resident-badge-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .resident-badge-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--navy);
-  }
-
-  .resident-badge-address {
-    font-size: 12px;
-    color: var(--gray-500);
-  }
-
-  .badge-tag {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: rgba(232,131,42,0.08);
-    border: 1px solid rgba(232,131,42,0.2);
-    border-radius: 20px;
-    padding: 4px 10px;
-    white-space: nowrap;
-  }
-
-  /* CHAT WINDOW */
-  .chat-window {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    height: 440px;
-  }
-
-  .chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 18px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    scroll-behavior: smooth;
-  }
-
-  .chat-messages::-webkit-scrollbar { width: 4px; }
-  .chat-messages::-webkit-scrollbar-track { background: transparent; }
-  .chat-messages::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 4px; }
-
-  .msg {
-    display: flex;
-    flex-direction: column;
-    max-width: 82%;
-    gap: 4px;
-  }
-
-  .msg.bot { align-self: flex-start; }
-  .msg.user { align-self: flex-end; }
-
-  .msg-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: var(--gray-500);
-    padding: 0 4px;
-  }
-
-  .msg.user .msg-label { text-align: right; }
-
-  .msg-bubble {
-    padding: 11px 14px;
-    border-radius: 12px;
-    font-size: 14px;
-    line-height: 1.55;
-  }
-
-  .msg.bot .msg-bubble {
-    background: var(--gray-50);
-    border: 1px solid var(--gray-100);
-    color: var(--navy);
-    border-bottom-left-radius: 4px;
-  }
-
-  .msg.user .msg-bubble {
-    background: var(--navy);
-    color: var(--white);
-    border-bottom-right-radius: 4px;
-  }
-
-  .typing-indicator {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    padding: 11px 14px;
-    background: var(--gray-50);
-    border: 1px solid var(--gray-100);
-    border-radius: 12px;
-    border-bottom-left-radius: 4px;
-    width: fit-content;
-  }
-
-  .typing-dot {
-    width: 7px;
-    height: 7px;
+  .check-circle {
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    background: var(--gray-300);
-    animation: bounce 1.2s infinite;
-  }
-
-  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
-
-  @keyframes bounce {
-    0%, 60%, 100% { transform: translateY(0); }
-    30% { transform: translateY(-5px); }
-  }
-
-  /* CHAT INPUT */
-  .chat-input-area {
-    border-top: 1px solid var(--gray-100);
-    padding: 12px 14px;
-    display: flex;
-    gap: 10px;
-    align-items: flex-end;
-  }
-
-  .chat-input {
-    flex: 1;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: var(--navy);
-    background: var(--gray-50);
-    border: 1.5px solid var(--gray-100);
-    border-radius: 8px;
-    padding: 10px 13px;
-    outline: none;
-    resize: none;
-    min-height: 42px;
-    max-height: 120px;
-    transition: border-color 0.2s;
-    line-height: 1.4;
-  }
-
-  .chat-input:focus {
-    border-color: var(--accent);
-    background: var(--white);
-  }
-
-  .btn-send {
-    width: 42px;
-    height: 42px;
-    flex-shrink: 0;
-    background: var(--accent);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    background: rgba(42,157,110,0.10);
+    border: 2px solid var(--success);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s;
   }
 
-  .btn-send:hover { background: var(--accent-light); }
-  .btn-send:disabled { background: var(--gray-300); cursor: not-allowed; }
+  .check-circle svg { width: 36px; height: 36px; stroke: var(--success); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 
-  .btn-send svg {
-    width: 18px;
-    height: 18px;
-    fill: none;
-    stroke: white;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+  .conf-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--navy); }
+  .conf-sub { font-size: 14px; color: var(--gray-500); line-height: 1.6; max-width: 420px; }
+  .conf-ref { font-size: 12px; color: var(--gray-500); margin-top: 4px; }
+
+  .conf-detail {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    padding: 14px 18px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
   }
 
-  /* FOOTER */
-  .footer {
-    text-align: center;
-    padding: 0 16px 20px;
-    font-size: 11px;
-    color: var(--gray-500);
-    letter-spacing: 0.2px;
-  }
+  .conf-detail-row { display: flex; gap: 8px; font-size: 13px; }
+  .conf-detail-label { font-weight: 600; color: var(--navy); min-width: 80px; }
+  .conf-detail-value { color: var(--gray-500); }
+
+  .footer { text-align: center; padding: 0 16px 24px; font-size: 11px; color: var(--gray-500); }
 
   @media (max-width: 480px) {
     .form-grid { grid-template-columns: 1fr; }
     .form-group.full { grid-column: 1; }
-    .main { padding: 16px 12px 24px; }
+    .main { padding: 16px 12px 28px; }
   }
 </style>
 </head>
@@ -444,21 +170,23 @@
 <div class="page">
 
   <header class="header">
-    <div class="header-logo"><span class="brand">EmpireWorks</span><span class="sub">Reconstruction</span></div>
+    <div class="header-logo">
+      <span class="brand">EmpireWorks</span>
+      <span class="sub">Reconstruction</span>
+    </div>
     <div class="header-divider"></div>
     <span class="header-title">Resident Support</span>
   </header>
 
   <main class="main">
 
-    <!-- INTAKE FORM -->
-    <div class="card" id="intake-card">
+    <div class="card" id="form-card">
       <div class="card-header">
         <div class="card-header-dot"></div>
-        <h2>Submit a Report</h2>
+        <h2>Submit a Maintenance Report</h2>
       </div>
       <div class="card-body">
-        <form id="intake-form">
+        <form id="report-form">
           <div class="form-grid">
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -477,34 +205,24 @@
               <input type="email" id="email" placeholder="jane@email.com" required />
             </div>
             <div class="form-group full">
-              <label for="issue">Reported Issue</label>
-              <textarea id="issue" placeholder="Describe the issue in as much detail as possible..." required></textarea>
+              <label for="issue">Description of Issue</label>
+              <textarea id="issue" placeholder="Please describe the issue in as much detail as possible..." required></textarea>
             </div>
           </div>
-          <button type="submit" class="btn-submit" id="submit-btn">Submit Report &amp; Open Chat</button>
-          <div class="status-msg" id="status-msg"></div>
+          <button type="submit" class="btn-submit" id="submit-btn">Submit Report</button>
         </form>
       </div>
     </div>
 
-    <!-- CHAT SECTION -->
-    <div class="chat-section" id="chat-section">
-      <div class="resident-badge" id="resident-badge">
-        <div class="resident-badge-info">
-          <span class="resident-badge-name" id="badge-name"></span>
-          <span class="resident-badge-address" id="badge-address"></span>
+    <div class="card" id="conf-card" style="display:none;">
+      <div class="confirmation active" id="confirmation">
+        <div class="check-circle">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-        <span class="badge-tag">Report Logged</span>
-      </div>
-
-      <div class="chat-window card">
-        <div class="chat-messages" id="chat-messages"></div>
-        <div class="chat-input-area">
-          <textarea class="chat-input" id="chat-input" placeholder="Ask a follow-up question..." rows="1"></textarea>
-          <button class="btn-send" id="send-btn" aria-label="Send">
-            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </button>
-        </div>
+        <div class="conf-title">Report Submitted</div>
+        <div class="conf-sub">Your report has been received. A member of the EmpireWorks project team will follow up with you within 24 hours. A confirmation has been sent to your email.</div>
+        <div class="conf-detail" id="conf-detail"></div>
+        <div class="conf-ref" id="conf-ref"></div>
       </div>
     </div>
 
@@ -518,175 +236,44 @@
 
 <script>
 const ZAPIER_WEBHOOK = 'https://hooks.zapier.com/hooks/catch/27574557/4yeu0fw/';
-const CLAUDE_API = '/api/chat';
 
-let residentData = {};
-let conversationHistory = [];
-
-const intakeForm = document.getElementById('intake-form');
-const submitBtn = document.getElementById('submit-btn');
-const statusMsg = document.getElementById('status-msg');
-const chatSection = document.getElementById('chat-section');
-const intakeCard = document.getElementById('intake-card');
-const chatMessages = document.getElementById('chat-messages');
-const chatInput = document.getElementById('chat-input');
-const sendBtn = document.getElementById('send-btn');
-
-function showStatus(msg, type) {
-  statusMsg.textContent = msg;
-  statusMsg.className = 'status-msg ' + type;
-}
-
-function addMessage(role, text) {
-  const wrapper = document.createElement('div');
-  wrapper.className = 'msg ' + (role === 'assistant' ? 'bot' : 'user');
-
-  const label = document.createElement('div');
-  label.className = 'msg-label';
-  label.textContent = role === 'assistant' ? 'Support' : 'You';
-
-  const bubble = document.createElement('div');
-  bubble.className = 'msg-bubble';
-  bubble.textContent = text;
-
-  wrapper.appendChild(label);
-  wrapper.appendChild(bubble);
-  chatMessages.appendChild(wrapper);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-  return wrapper;
-}
-
-function showTyping() {
-  const wrapper = document.createElement('div');
-  wrapper.className = 'msg bot';
-  wrapper.id = 'typing';
-
-  const label = document.createElement('div');
-  label.className = 'msg-label';
-  label.textContent = 'Support';
-
-  const indicator = document.createElement('div');
-  indicator.className = 'typing-indicator';
-  for (let i = 0; i < 3; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'typing-dot';
-    indicator.appendChild(dot);
-  }
-
-  wrapper.appendChild(label);
-  wrapper.appendChild(indicator);
-  chatMessages.appendChild(wrapper);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function removeTyping() {
-  const t = document.getElementById('typing');
-  if (t) t.remove();
-}
-
-async function sendToClaude(userMessage) {
-  conversationHistory.push({ role: 'user', content: userMessage });
-
-  showTyping();
-  sendBtn.disabled = true;
-  chatInput.disabled = true;
-
-  try {
-    const response = await fetch(CLAUDE_API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: `You are a resident support assistant for EmpireWorks Reconstruction, a licensed California general contractor specializing in HOA and residential reconstruction. You are helpful, professional, and concise.
-
-The resident has submitted the following report:
-Name: ${residentData.name}
-Address: ${residentData.address}
-Phone: ${residentData.phone}
-Email: ${residentData.email}
-Reported Issue: ${residentData.issue}
-
-Your role is to:
-1. Acknowledge their report and confirm it has been logged and sent to the EmpireWorks team.
-2. Answer general questions about their issue, timeline, or process.
-3. Advise them that a project manager will follow up directly.
-4. For urgent safety issues (gas leaks, structural hazards, flooding), direct them to call 911 or their HOA emergency line immediately.
-5. Do not make specific promises about repair timelines or costs.
-Keep responses brief and professional.`,
-        messages: conversationHistory
-      })
-    });
-
-    const data = await response.json();
-    const reply = data.content[0].text;
-
-    removeTyping();
-    addMessage('assistant', reply);
-    conversationHistory.push({ role: 'assistant', content: reply });
-
-  } catch (err) {
-    removeTyping();
-    addMessage('assistant', 'I apologize, I am having trouble connecting. Please call our office at (888) 278-8200 for immediate assistance.');
-  }
-
-  sendBtn.disabled = false;
-  chatInput.disabled = false;
-  chatInput.focus();
-}
-
-intakeForm.addEventListener('submit', async (e) => {
+document.getElementById('report-form').addEventListener('submit', async function(e) {
   e.preventDefault();
 
-  residentData = {
-    name: document.getElementById('name').value.trim(),
-    phone: document.getElementById('phone').value.trim(),
-    address: document.getElementById('address').value.trim(),
-    email: document.getElementById('email').value.trim(),
-    issue: document.getElementById('issue').value.trim(),
-    timestamp: new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })
-  };
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
 
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Submitting...';
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const address = document.getElementById('address').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const issue = document.getElementById('issue').value.trim();
+  const timestamp = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+  const refNumber = 'EW-' + Date.now().toString().slice(-6);
+
+  const payload = { name, phone, address, email, issue, timestamp, reference: refNumber };
 
   try {
     await fetch(ZAPIER_WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(residentData),
+      body: JSON.stringify(payload),
       mode: 'no-cors'
     });
   } catch (err) {}
 
-  document.getElementById('badge-name').textContent = residentData.name;
-  document.getElementById('badge-address').textContent = residentData.address;
+  document.getElementById('form-card').style.display = 'none';
+  document.getElementById('conf-card').style.display = 'block';
 
-  intakeCard.style.display = 'none';
-  chatSection.classList.add('active');
+  document.getElementById('conf-detail').innerHTML = `
+    <div class="conf-detail-row"><span class="conf-detail-label">Name</span><span class="conf-detail-value">${name}</span></div>
+    <div class="conf-detail-row"><span class="conf-detail-label">Address</span><span class="conf-detail-value">${address}</span></div>
+    <div class="conf-detail-row"><span class="conf-detail-label">Email</span><span class="conf-detail-value">${email}</span></div>
+    <div class="conf-detail-row"><span class="conf-detail-label">Issue</span><span class="conf-detail-value">${issue}</span></div>
+  `;
 
-  await sendToClaude(`I just submitted a report. My issue is: ${residentData.issue}`);
-});
-
-sendBtn.addEventListener('click', () => {
-  const msg = chatInput.value.trim();
-  if (!msg) return;
-  addMessage('user', msg);
-  chatInput.value = '';
-  chatInput.style.height = 'auto';
-  sendToClaude(msg);
-});
-
-chatInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault();
-    sendBtn.click();
-  }
-});
-
-chatInput.addEventListener('input', () => {
-  chatInput.style.height = 'auto';
-  chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + 'px';
+  document.getElementById('conf-ref').textContent = 'Reference: ' + refNumber;
 });
 </script>
 </body>
