@@ -6,23 +6,27 @@ export default async function handler(req, res) {
   const { messages, system } = req.body;
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const openaiMessages = [
+      { role: 'system', content: system },
+      ...messages
+    ];
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': process.env.ANTHROPIC_KEY,
-        'anthropic-version': '2023-06-01'
+        'Authorization': `Bearer ${process.env.OPENAI_KEY}`
       },
       body: JSON.stringify({
-        model: 'claude-3-5-sonnet-20241022',
+        model: 'gpt-4o-mini',
         max_tokens: 1000,
-        system,
-        messages
+        messages: openaiMessages
       })
     });
 
     const data = await response.json();
-    return res.status(200).json(data);
+    const reply = data.choices?.[0]?.message?.content || 'Unable to process your request.';
+    return res.status(200).json({ content: [{ text: reply }] });
   } catch (err) {
     return res.status(500).json({ error: 'API request failed' });
   }
